@@ -76,6 +76,20 @@ Homework HomeworkList::getHomeworkAt(int index) {
 	}
 }
 
+Homework HomeworkList::getHomeworkAtRec(int index, list<Homework>::iterator it) {
+	if (index == 0) {
+		return *it;
+	}
+	else {
+		return getHomeworkAtRec(index - 1, ++it);
+	}
+}
+
+Homework HomeworkList::getHomeworkAt(int index) {
+	list<Homework>::iterator it = this->assignmentList.begin();
+	return getHomeworkAtRec(index, it);
+}
+
 void HomeworkList::updateEstimatedTime(double estTime, int index) {
 	this->getHomeworkAt(index).setEstimatedTime(estTime);
 }

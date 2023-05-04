@@ -26,6 +26,7 @@ public:
 	// Setters/getters
 	list<Homework> getAssignmentList();
 	Homework getHomeworkAt(int index);
+	Homework getHomeworkAtRec(int index, list<Homework>::iterator it);
 	void updateEstimatedTime(double estTime, int index);
 	void updatePoints(double pts, int index);
 	void updateCourse(string course, int index);
